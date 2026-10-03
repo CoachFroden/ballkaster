@@ -20,7 +20,7 @@ unsigned long lastStepMicros = 0;
 
 const char PAGE[] PROGMEM = R"HTML(
 <!doctype html><html lang="no"><head>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#111827">
 <title>Ballkaster – Servo test</title>
 <style>
@@ -39,10 +39,10 @@ button:active{transform:scale(.98)}.primary{background:#0284c7}.stop{width:100%;
 </style></head><body><main>
 <div class="top"><h1>⚽ Ballkaster</h1><span class="badge">SERVO TEST</span></div>
 <div class="card">
- <div class="label"><span>Målvinkel</span><span><b class="value" id="angleVal">90</b><span class="unit">°</span></span></div>
+ <div class="label"><span>Målvinkel</span><span><b class="value" id="angleVal">90</b><span class="unit">&deg;</span></span></div>
  <input id="angle" type="range" min="0" max="180" value="90" step="1">
- <div class="ticks"><span>0°</span><span>90°</span><span>180°</span></div>
- <div class="quick"><button onclick="setAngle(0)">0°</button><button class="primary" onclick="setAngle(90)">90°</button><button onclick="setAngle(180)">180°</button></div>
+ <div class="ticks"><span>0&deg;</span><span>90&deg;</span><span>180&deg;</span></div>
+ <div class="quick"><button onclick="setAngle(0)">0&deg;</button><button class="primary" onclick="setAngle(90)">90&deg;</button><button onclick="setAngle(180)">180&deg;</button></div>
 </div>
 <div class="card">
  <div class="label"><span>Bevegelseshastighet</span><span><b class="value" id="speedVal">35</b><span class="unit">%</span></span></div>
@@ -50,7 +50,7 @@ button:active{transform:scale(.98)}.primary{background:#0284c7}.stop{width:100%;
  <div class="ticks"><span>Sakte</span><span></span><span>Rask</span></div>
 </div>
 <div class="card">
- <div class="label"><span>Beregnet servoposisjon</span><span id="actual">90°</span></div>
+ <div class="label"><span>Beregnet servoposisjon</span><span id="actual">90&deg;</span></div>
  <div class="track"><div id="bar"></div></div>
  <p class="note">Posisjonen er beregnet fra kommandoene til servoen; SG90 har ikke posisjonsfeedback til ESP32.</p>
 </div>
@@ -62,11 +62,13 @@ const av=document.getElementById('angleVal'),sv=document.getElementById('speedVa
 let timer;
 function send(){fetch('/set?angle='+a.value+'&speed='+s.value).catch(()=>{});}
 function delayedSend(){clearTimeout(timer);timer=setTimeout(send,80)}
-a.oninput=()=>{av.textContent=a.value;delayedSend()};s.oninput=()=>{sv.textContent=s.value;delayedSend()};
+a.oninput=()=>{av.textContent=a.value};
+a.onchange=()=>{send()};
+s.oninput=()=>{sv.textContent=s.value;delayedSend()};
 function setAngle(v){a.value=v;av.textContent=v;send()}
 function stopServo(){fetch('/stop').catch(()=>{})}
 setInterval(()=>fetch('/status').then(r=>r.json()).then(x=>{
- document.getElementById('actual').textContent=x.current.toFixed(0)+'°';
+ document.getElementById('actual').textContent=x.current.toFixed(0)+'&deg;';
  document.getElementById('bar').style.width=(x.current/180*100)+'%';
 }).catch(()=>{}),300);
 </script></main></body></html>
@@ -95,7 +97,7 @@ void handleStatus(){
 void updateServo(){
   if(stopped || abs(targetAngle-currentAngle)<0.5) return;
   // 1–100 % tilsvarer omtrent 9–180 grader/sekund.
-  float degreesPerSecond = 7.3 + speedPercent * 1.727;
+  float degreesPerSecond = 5.0 + speedPercent * 5.95;
   unsigned long intervalUs = (unsigned long)(1000000.0 / degreesPerSecond);
   unsigned long now = micros();
   if(now-lastStepMicros < intervalUs) return;
