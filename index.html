@@ -2,7 +2,7 @@
 :root{font-family:Arial,Helvetica,sans-serif;color:#122b40;background:#c9d5dd}*{box-sizing:border-box}body{margin:0;background:repeating-linear-gradient(120deg,#e7eef2 0,#e7eef2 3px,#e2eaf0 4px,#e2eaf0 7px);min-height:100vh}.shell{max-width:1200px;margin:auto;padding:14px 18px 110px}.mast{display:flex;justify-content:space-between;align-items:center;border-bottom:5px solid #174d75;padding:8px 0 15px;gap:10px}.brand{font-size:clamp(27px,5vw,51px);font-weight:1000;letter-spacing:-2px;font-style:italic;line-height:1}.brand span{color:#1683c4}.meta{text-align:right;font-size:10px;letter-spacing:2px;font-weight:800;color:#42657c}.meta b{display:block;background:#123e5e;color:#e7faff;padding:8px 12px;margin-bottom:6px;letter-spacing:1px}.warningline{display:flex;gap:12px;align-items:center;padding:12px 0;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.led{width:11px;height:11px;border-radius:50%;background:#d88d26;box-shadow:0 0 0 4px #eabf7844}.layout{display:grid;grid-template-columns:240px minmax(0,1fr) 240px;gap:12px}.panel{border-radius:18px;background:linear-gradient(125deg,#fbfdff,#c8d7e1 56%,#f0f5f8);border:2px solid #8299aa;box-shadow:inset 0 2px #fff,0 5px 0 #8c9eaa,0 10px 15px #56718633;padding:17px;position:relative}.panel:before{content:"";position:absolute;inset:6px;border:1px solid #ffffffa0;pointer-events:none}.eyebrow{font-size:10px;font-weight:900;letter-spacing:2px;color:#51718a}.section{font-size:19px;font-weight:1000;font-style:italic;margin:7px 0 18px}.dial{will-change:transform;width:172px;height:172px;margin:14px auto 22px;border-radius:50%;position:relative;background:repeating-conic-gradient(from -120deg,#6b879a 0deg 1deg,transparent 1deg 12deg),radial-gradient(circle,#dce8f0 0 56%,#526e81 57% 60%,#b4c8d5 61% 72%,#415a6d 73% 77%,#c6d7e1 78%);box-shadow:inset 0 4px 14px #3d5b7180,0 3px 4px #fff}.dial:before{content:"";position:absolute;inset:28px;border-radius:50%;background:radial-gradient(circle at 40% 30%,#164e75,#081c2d 70%);box-shadow:inset 0 2px 12px #000}.dial .readout{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9fe3ff;font-size:49px;font-weight:900;font-family:Consolas,monospace;text-shadow:0 0 12px #22aaff}.dial .readout small{font-size:11px;letter-spacing:2px;color:#7bbedc}.control{width:100%;accent-color:#087cb7;cursor:pointer;height:28px}.ticks{display:flex;justify-content:space-between;font-family:Consolas,monospace;font-size:11px;color:#476477;font-weight:bold}.machine{border-radius:22px;min-height:475px;background:radial-gradient(circle at 50% 30%,#1e608c,#092a46 58%,#061c30);color:#d9f1ff;border:5px solid #7f9bab;box-shadow:inset 0 0 0 3px #c3d7e1,0 5px 0 #728e9d,0 10px 15px #56718644;position:relative;overflow:hidden;padding:18px}.machine:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 5px,#c5eaff07 6px 7px)}.machine .eyebrow{color:#6fbde6}.machine h2{font-size:21px;font-style:italic;letter-spacing:2px;margin:6px 0 0}.schematic{display:block;width:100%;max-height:355px;margin:auto;filter:drop-shadow(0 15px 15px #0008)}.plate{position:absolute;bottom:15px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:center;font:800 10px Consolas,monospace;letter-spacing:1px;color:#77bde0;border-top:1px solid #4886a8;padding-top:12px}.bottom{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-top:18px}.angleblock{display:flex;align-items:center;gap:16px}.anglevalue{font-size:45px;font-weight:900;font-family:Consolas,monospace;color:#0e638f}.anglebar{flex:1}.buttonbar{display:flex;gap:10px;align-items:stretch}.bigbutton{border-radius:13px;flex:1;min-height:70px;border:2px solid #496b81;font-weight:1000;letter-spacing:1.4px;font-size:16px;cursor:pointer;box-shadow:inset 0 2px #ffffff77,0 5px 0 #547184;transform:translateY(0)}.bigbutton:active{transform:translateY(3px);box-shadow:inset 0 2px #ffffff77,0 2px 0 #547184}.start{background:linear-gradient(#a8e6ff,#1484bf);color:#06334e}.stop{background:linear-gradient(#ff9c9c,#b71e34);color:white;border-color:#7b1c29}.presets{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.preset{border-radius:12px;border:1px solid #7b97a9;background:#dce9f1;padding:13px 16px;flex:1;min-width:125px;font-weight:900;cursor:pointer;color:#164b6e;text-transform:uppercase;font-size:11px;letter-spacing:.8px}.preset.active{background:#12577e;color:white}.note{font-size:11px;line-height:1.5;color:#4a667b;margin-top:16px}.bolt{position:absolute;width:8px;height:8px;background:radial-gradient(circle,#edf7ff,#5d7c8d);border-radius:50%;box-shadow:0 1px 2px #203c4e}.bolt.a{top:8px;right:8px}.bolt.b{bottom:8px;right:8px}.bolt.c{bottom:8px;left:8px}.bolt.d{top:8px;left:8px}@media(max-width:860px){.layout{grid-template-columns:1fr 1fr}.machine{grid-column:1/-1;grid-row:1;min-height:390px}.schematic{max-height:280px}.bottom{grid-template-columns:1fr}.dial{width:140px;height:140px}.dial .readout{font-size:37px}}@media(max-width:470px){.shell{padding:10px 10px 100px}.layout{gap:9px}.panel{padding:12px}.section{font-size:14px}.dial{width:120px;height:120px;margin:8px auto 15px}.dial:before{inset:23px}.dial .readout{font-size:33px}.machine{padding:14px;min-height:315px}.schematic{max-height:220px}.machine h2{font-size:17px}.anglevalue{font-size:36px}.meta{font-size:8px}.meta b{padding:6px}.brand{letter-spacing:-1px}.warningline{font-size:9px}}
 body{color:#d7ebfa;background:radial-gradient(ellipse at 48% -12%,#174d7b 0%,#071629 48%,#040d18 100%)}.mast{border-color:#248bc5}.brand span{color:#5dc9ff}.meta{color:#85b4d0}.meta b{background:#0c3657;color:#c6edff;border-radius:8px}.panel{background:linear-gradient(140deg,#254763 0%,#10283f 43%,#0a1b30 100%);border-color:#4c7897;box-shadow:inset 0 1px #b9e9ff55,inset 0 -12px 24px #0004,0 8px 20px #0007;border-radius:23px}.panel:before{border-radius:17px;border-color:#a6e0ff20}.eyebrow{color:#82b6d6}.section{color:#e4f5ff}.dial{background:repeating-conic-gradient(from -120deg,#8bc7ea 0deg 1deg,transparent 1deg 12deg),radial-gradient(circle,#0e2e4a 0 56%,#244e6c 57% 60%,#7da5bf 61% 72%,#0a2036 73% 77%,#3c7395 78%);box-shadow:inset 0 4px 14px #0009,0 2px 5px #8bc8ff55}.ticks{color:#a0c1d5}.machine{background:radial-gradient(circle at 50% 35%,#175784,#081c32 62%,#030c17);border-color:#3c7298;box-shadow:inset 0 0 0 2px #80cfff55,0 8px 26px #000a;border-radius:25px}.anglevalue{color:#79d5ff}.preset{background:linear-gradient(#255679,#0b2944);border-color:#5385a7;color:#d2edff;border-radius:15px}.preset.active{background:#2499d0;color:#021b30}.note{color:#9dbbd0}.start{background:linear-gradient(#9be9ff,#1988bd)}.stop{background:linear-gradient(#f78b9a,#9b1e3d)}.control{accent-color:#53c5ff}.bigbutton{border-radius:17px}#viewer3d{width:100%;height:clamp(270px,43vw,430px);position:relative;touch-action:none;cursor:grab}#viewer3d:active{cursor:grabbing}#viewer3d canvas{display:block;width:100%;height:100%}#loading3d{position:absolute;inset:0;display:grid;place-items:center;color:#a2d9f7;font-size:12px;letter-spacing:2px}.viewhelp{font-size:10px;letter-spacing:1px;text-align:center;color:#9ac9e7;padding:3px 0 39px}@media(max-width:470px){#viewer3d{height:300px}.viewhelp{font-size:9px;letter-spacing:.4px;padding-bottom:35px}}</style></head><body><main class="shell"><header class="mast"><div><div class="eyebrow">COACHFRODEN / TRAINING EQUIPMENT</div><div class="brand">BALL<span>KASTER</span><sup style="font-size:12px;vertical-align:top">01</sup></div></div><div class="meta"><b>FIELD CONTROL SYSTEM</b>PROTOTYPE / MK-I</div></header><div class="warningline"><span class="led" id="led"></span><span id="status">SIMULERING / IKKE TILKOBLET ESP32</span></div>
 <div class="layout"><section class="panel"><i class="bolt a"></i><i class="bolt b"></i><i class="bolt c"></i><i class="bolt d"></i><div class="eyebrow">DRIVE UNIT / L</div><div class="section">VENSTRE HJUL</div><div class="dial"><div class="readout"><span id="leftval">25</span><small>POWER %</small></div></div><input id="left" class="control" type="range" min="0" max="100" value="25" aria-label="Venstre hjul"><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div></section>
-<section class="machine"><div class="eyebrow">INTERACTIVE MACHINE MODEL / DEMO</div><h2>BALLKASTER / 3D</h2><div id="viewer3d" aria-label="Interaktiv 3D-modell av ballkasteren"><div id="loading3d">LASTER 3D-MODELL …</div></div><div class="viewhelp">DRA FOR Å ROTERE VISNINGEN · KLYP FOR Å ZOOME · TO FINGRE FOR Å FLYTTE</div><div class="plate"><span>ESP32 / WIFI DIRECT</span><span>REV. 01 — DEMO</span></div></section>
+<section class="machine"><div class="eyebrow">3D-MODELL ETTER FOTOGRAFIER / DEMO</div><h2>BALLKASTER / 3D</h2><div id="viewer3d" aria-label="Interaktiv 3D-modell av ballkasteren"><div id="loading3d">LASTER 3D-MODELL …</div></div><div class="viewhelp">DRA FOR Å ROTERE VISNINGEN · KLYP FOR Å ZOOME · TO FINGRE FOR Å FLYTTE</div><div class="plate"><span>ESP32 / WIFI DIRECT</span><span>REV. 01 — DEMO</span></div></section>
 <section class="panel"><i class="bolt a"></i><i class="bolt b"></i><i class="bolt c"></i><i class="bolt d"></i><div class="eyebrow">DRIVE UNIT / R</div><div class="section">HØYRE HJUL</div><div class="dial"><div class="readout"><span id="rightval">25</span><small>POWER %</small></div></div><input id="right" class="control" type="range" min="0" max="100" value="25" aria-label="Høyre hjul"><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div></section></div>
 <div class="bottom"><section class="panel"><div class="eyebrow">HJULOPPSETT / ROTASJON 0–90°</div><div class="angleblock"><div class="anglevalue"><span id="angleval">0</span>°</div><div class="anglebar"><input id="angle" class="control" type="range" min="0" max="90" value="0" aria-label="Rotasjon av hjuloppsett"><div class="ticks"><span>0° / SIDE</span><span>45°</span><span>90° / OVER-UNDER</span></div></div></div></section><section class="panel"><div class="eyebrow">MAIN CONTROL / DEMO ONLY</div><div class="buttonbar" style="margin-top:12px"><button class="bigbutton start" id="start">▶ START</button><button class="bigbutton stop" id="stop">■ STOPP</button></div></section></div>
 <div class="presets"><button class="preset" data-v="35,35,0">01 / PASNING</button><button class="preset" data-v="65,65,0">02 / SKUDD</button><button class="preset" data-v="55,75,90">03 / SKRU</button><button class="preset" data-v="25,25,0">04 / RESET</button></div><p class="note">PROTOTYPE: Alle kontroller er simulering. Hastigheter er PWM-prosent, ikke målt hjulhastighet. Rotasjon er begrenset til 0–90° i demoen. Fysisk nullpunkt og mekaniske endestopp må sikres før bruk. Fysisk nødstopp og tilkoblingsovervåking kreves før motordrift.</p></main><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"}}</script><script type="module">
@@ -11,9 +11,9 @@ import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.161.0/examples
 const $=id=>document.getElementById(id);
 let running=false,ls=0,rs=0,tilt=0,last=0;
 const host=$('viewer3d'),scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(38,1,.1,100);camera.position.set(5.8,4.4,9.5);
+const camera=new THREE.PerspectiveCamera(38,1,.1,100);camera.position.set(6.2,4.6,9.2);
 const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setSize(host.clientWidth,host.clientHeight);host.appendChild(renderer.domElement);$('loading3d').remove();
-const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.07;controls.minDistance=5;controls.maxDistance=18;controls.target.set(0,1.8,0);controls.update();
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.07;controls.minDistance=5;controls.maxDistance=18;controls.target.set(0,1.75,0);controls.update();
 scene.add(new THREE.HemisphereLight(0xc5eaff,0x10253b,2.3));
 const key=new THREE.DirectionalLight(0xffffff,3);key.position.set(-4,9,6);scene.add(key);
 const rim=new THREE.DirectionalLight(0x36b5ff,2.2);rim.position.set(5,5,-5);scene.add(rim);
@@ -21,28 +21,56 @@ const silver=new THREE.MeshStandardMaterial({color:0x9eb4c5,metalness:.8,roughne
 function box(parent,w,h,d,x,y,z,mat){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);o.position.set(x,y,z);parent.add(o);return o}
 function cyl(parent,r1,r2,h,x,y,z,mat,axis='y'){const o=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,48),mat);if(axis==='z')o.rotation.x=Math.PI/2;else if(axis==='x')o.rotation.z=Math.PI/2;o.position.set(x,y,z);parent.add(o);return o}
 function torus(parent,r,t,x,y,z,mat){const o=new THREE.Mesh(new THREE.TorusGeometry(r,t,12,64),mat);o.rotation.x=Math.PI/2;o.position.set(x,y,z);parent.add(o);return o}
-// Fast fot og U-brakett, sett fra siden fremstår de to vangene som én stolpe.
-box(scene,2.2,.18,1.9,0,.15,0,edge);
-for(const x of [-.88,.88])for(const z of [-.68,.68]){cyl(scene,.095,.095,.08,x,.28,z,silver)}
-for(const z of [-.34,.34]){box(scene,.53,2.05,.18,0,1.28,z,silver);box(scene,.57,.12,.2,0,2.30,z,edge)}
-// Felles aksling går gjennom begge U-vangene og det roterende motorstaget.
-cyl(scene,.14,.14,1.12,0,2.18,0,silver,'z');
-for(const z of [-.61,.61])cyl(scene,.23,.23,.10,0,2.18,z,hub,'z');
-const rotating=new THREE.Group();rotating.position.set(0,2.18,0);scene.add(rotating);
-// Motorstaget roterer rundt z-aksen, ikke rundt selve U-braketten.
-box(rotating,4.7,.27,.48,0,0,0,silver);
-box(rotating,.63,.32,.58,0,0,0,edge);
+// Fotoreferanse: hvit 3D-printet åpen U-holder, sølvfargede 775-motorer under hjulene.
+const plastic=new THREE.MeshStandardMaterial({color:0xe9e8df,metalness:.03,roughness:.58});
+const printShade=new THREE.MeshStandardMaterial({color:0xbfc2bc,metalness:.04,roughness:.67});
+const motorMetal=new THREE.MeshStandardMaterial({color:0x899398,metalness:.88,roughness:.3});
+const rimMetal=new THREE.MeshStandardMaterial({color:0xb5bfc2,metalness:.9,roughness:.23});
+const tread=new THREE.MeshStandardMaterial({color:0x13171b,roughness:.9});
+const shaftMat=new THREE.MeshStandardMaterial({color:0xb2bec7,metalness:.94,roughness:.16});
+// Hvit U: bunnplate og to oppstående vanger i dybderetning. Ingen tverrbjelke øverst.
+box(scene,1.65,.22,1.85,0,.12,0,plastic);
+for(const z of [-.67,.67]){
+  box(scene,.46,2.03,.19,0,1.23,z,plastic);
+  box(scene,.46,.12,.19,0,2.30,z,printShade);
+}
+// Den lange, synlige stålakslingen gjennom begge vangene og midtstykket.
+cyl(scene,.075,.075,4.2,0,2.04,0,shaftMat,'z');
+for(const z of [-.81,.81])cyl(scene,.19,.19,.10,0,2.04,z,rimMetal,'z');
+// Blå liten servomotor på utsiden av den fremste vangen, som på bildene.
+box(scene,.31,.42,.18,-.17,1.45,.88,blue);
+const servoHorn=box(scene,.08,.24,.08,-.17,1.63,1.02,plastic);
+// Rotasjon rundt samme aksel; den faste U-braketten skal ikke følge med.
+const rotating=new THREE.Group();rotating.position.set(0,2.04,0);scene.add(rotating);
+// Hvit 3D-printet tverrbjelke med avrundingslignende endestykker.
+box(rotating,4.45,.31,.62,0,0,0,plastic);
+for(const x of [-1.76,1.76]){
+  box(rotating,1.06,.34,.78,x,-.02,0,plastic);
+  box(rotating,.97,.20,.80,x,-.22,0,printShade);
+}
+box(rotating,.68,.50,.60,0,-.13,0,plastic);
+// Motorene henger under staget; hjulene ligger flatt oppå.
 const wheels=[];
-for(const [i,x] of [-1.75,1.75].entries()){
-  // Motorene sitter på oversiden av staget, hjulene ligger flatt.
-  box(rotating,.55,.55,.57,x,.42,0,blue);
-  cyl(rotating,.19,.19,.17,x,.79,0,silver);
-  const wheel=new THREE.Group();wheel.position.set(x,1.04,0);rotating.add(wheel);
-  cyl(wheel,.82,.82,.23,0,0,0,rubber);
-  cyl(wheel,.59,.59,.245,0,0,0,dark);
-  torus(wheel,.73,.095,0,0,0,rubber);
-  cyl(wheel,.22,.22,.27,0,0,0,hub);
-  for(let j=0;j<6;j++){const sp=box(wheel,.07,.28,.36,0,0,0,silver);sp.position.set(Math.cos(j*Math.PI/3)*.38,.15,Math.sin(j*Math.PI/3)*.38);sp.rotation.y=-j*Math.PI/3}
+for(const x of [-1.76,1.76]){
+  cyl(rotating,.34,.34,.87,x,-.79,0,motorMetal);
+  cyl(rotating,.37,.37,.12,x,-1.22,0,motorMetal);
+  // Motorens ventilasjonsbånd.
+  cyl(rotating,.35,.35,.08,x,-.95,0,edge);
+  cyl(rotating,.16,.16,.26,x,.32,0,shaftMat);
+  const wheel=new THREE.Group();wheel.position.set(x,.55,0);rotating.add(wheel);
+  // Dekk og aluminiumsfelg i samme orientering som på bildene.
+  cyl(wheel,.79,.79,.34,0,0,0,tread);
+  cyl(wheel,.59,.59,.355,0,0,0,rimMetal);
+  cyl(wheel,.48,.48,.37,0,0,0,dark);
+  torus(wheel,.69,.09,0,.18,0,tread);
+  torus(wheel,.53,.055,0,.19,0,rimMetal);
+  for(let j=0;j<6;j++){
+    const a=j*Math.PI/3;
+    const spoke=box(wheel,.13,.045,.39,Math.sin(a)*.29,.20,Math.cos(a)*.29,rimMetal);
+    spoke.rotation.y=a;
+  }
+  cyl(wheel,.18,.18,.40,0,0,0,rimMetal);
+  cyl(wheel,.075,.075,.43,0,0,0,shaftMat);
   wheels.push(wheel);
 }
 function sync(){['left','right','angle'].forEach(id=>$(id+'val').textContent=$(id).value)}
