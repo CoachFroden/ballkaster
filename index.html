@@ -43,15 +43,15 @@ const servoHorn=box(scene,.08,.24,.08,-.17,1.63,1.02,plastic);
 // Rotasjon rundt samme aksel; den faste U-braketten skal ikke følge med.
 const rotating=new THREE.Group();rotating.position.set(0,2.04,0);scene.add(rotating);
 // Hvit 3D-printet tverrbjelke med avrundingslignende endestykker.
-box(rotating,4.45,.31,.62,0,0,0,plastic);
-for(const x of [-1.76,1.76]){
+box(rotating,3.18,.31,.62,0,0,0,plastic);
+for(const x of [-1.19,1.19]){
   box(rotating,1.06,.34,.78,x,-.02,0,plastic);
   box(rotating,.97,.20,.80,x,-.22,0,printShade);
 }
 box(rotating,.68,.50,.60,0,-.13,0,plastic);
 // Motorene henger under staget; hjulene ligger flatt oppå.
 const wheels=[];
-for(const x of [-1.76,1.76]){
+for(const x of [-1.19,1.19]){
   cyl(rotating,.34,.34,.87,x,-.79,0,motorMetal);
   cyl(rotating,.37,.37,.12,x,-1.22,0,motorMetal);
   // Motorens ventilasjonsbånd.
