@@ -64,8 +64,8 @@ function frame(time){
   $('spokesR').setAttribute('transform','rotate('+rightRotation+' 339 184)');
   const targetTilt=Number($('angle').value);
   tiltShown+=(targetTilt-tiltShown)*Math.min(1,dt*5);
-  // Vipp illustrasjonen rundt et punkt nær understellet.
-  $('launcherTilt').setAttribute('transform','rotate('+((tiltShown-15)*.35)+' 250 295)');
+  // Roter hele hjuloppsettet 0–90 grader rundt ballens utskytningsakse; understellet er fast.
+  $('launcherTilt').setAttribute('transform','rotate('+tiltShown+' 250 184)');
   requestAnimationFrame(frame);
 }
 sync();requestAnimationFrame(frame);
