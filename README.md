@@ -1,46 +1,21 @@
 # Ballkaster
 
-Prototype for ESP32-styrt ballkaster.
+ESP32-styrt ballkaster med to 775 DC-motorer via IBT-2 og steppermotor via ULN2003A og stepperdriver.
 
-## Servo-test
+## Kontrollpanel
 
-Første test styrer én SG90 på **GPIO 18 / D18** fra mobil eller PC.
+Den nye metallisk blå kontrollappen ligger i `index.html` (kopi i `web/index.html`). Foreløpig er den en **demo**: knappene styrer ikke fysisk utstyr.
 
-### Kobling
-- SG90 signal (oransje/gul) → D18
-- SG90 +5 V (rød) → separat regulert 5 V
-- SG90 GND (brun/svart) → 5 V GND
-- ESP32 GND → samme GND
-- ESP32 → PC via USB-C ved programmering
+For nettvisning kan GitHub Pages aktiveres fra Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
 
-Ikke koble servoen til 12 V.
+Når GitHub Pages er aktivert, blir adressen `https://coachfroden.github.io/ballkaster/`.
 
-### Arduino
-Installer:
-- ESP32 by Espressif Systems
-- ESP32Servo
+## Planlagt ESP32-integrasjon
 
-Velg:
-- Board: ESP32 Dev Module
-- Upload speed: 115200
+ESP32 skal opprette eget Wi-Fi-nettverk. Kontrollappen serveres lokalt på `http://192.168.4.1` uten internett. Før reell motordrift kreves blant annet fysisk nødstopp, tilkoblingsovervåking og kalibrert vinkelreferanse.
 
-Åpne:
-`firmware/ballkaster_servo_test/ballkaster_servo_test.ino`
+## Motorpinner
 
-Last opp til ESP32.
-
-### Bruk appen
-Etter oppstart lager ESP32 sitt eget Wi-Fi:
-- Nettverk: **Ballkaster-Test**
-- Passord: **balltest**
-
-Koble telefon/PC til dette Wi-Fi-nettet og åpne **http://192.168.4.1** i nettleseren.
-
-Appen har:
-- vinkel 0–180°
-- hastighet 1–100 %
-- hurtigvalg 0° / 90° / 180°
-- stoppknapp
-- beregnet nåværende posisjon
-
-> Merk: SG90 gir ikke faktisk posisjonsfeedback. Visningen er ESP32-ens beregnede posisjon basert på kommandoene den har sendt.
+- Motor 1: RPWM GPIO26, LPWM GPIO27, EN GPIO17
+- Motor 2: RPWM GPIO14, LPWM GPIO13, EN GPIO16
+- Stepper via ULN2003A: STEP GPIO4, DIR GPIO22, EN GPIO23
