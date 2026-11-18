@@ -130,6 +130,7 @@ async function api(path,params){
   if(!response.ok)throw Error('HTTP '+response.status);
   return response.json();
 }
+function resetSettings(){for(const id of ['power','bpPower'])$(id).value=20;for(const id of ['spin','bpSpin'])$(id).value=0;update();}
 function settings(){return {power:$('power').value,spin:$('spin').value,angle:$('angle').value}}
 async function heartbeatTick(){
   if(!running||sending)return;
@@ -138,12 +139,13 @@ async function heartbeatTick(){
     const state=await api('/api/test/settings',settings());
     if(!state.active)throw Error('Test avsluttet på ESP32');
   }catch(e){
-    running=false;clearInterval(heartbeat);heartbeat=null;buttons();
+    running=false;clearInterval(heartbeat);heartbeat=null;resetSettings();buttons();
     statusText('● STOPPET · Ingen kontakt med ESP32 ('+e.message+')');
   }finally{sending=false}
 }
 async function startControl(){
   if(running)return;
+  resetSettings();
   if(!espMode){running=true;buttons();statusText('● DEMO AKTIV · Ingen fysisk motorstyring');return}
   $('start').disabled=true;
   statusText('● Kobler til ESP32 …');
@@ -153,10 +155,10 @@ async function startControl(){
     statusText('● KOMMUNIKASJONSTEST AKTIV · Motorene er AV');
     await heartbeatTick();
     if(running)heartbeat=setInterval(heartbeatTick,400);
-  }catch(e){running=false;buttons();statusText('● STOPPET · Kunne ikke starte test ('+e.message+')')}
+  }catch(e){running=false;resetSettings();buttons();statusText('● STOPPET · Kunne ikke starte test ('+e.message+')')}
 }
 async function stopControl(){
-  running=false;clearInterval(heartbeat);heartbeat=null;buttons();
+  running=false;clearInterval(heartbeat);heartbeat=null;resetSettings();buttons();
   if(!espMode){statusText('● KLAR · Demo – ingen motorstyring');return}
   statusText('● Stopper test …');
   try{await api('/api/test/stop');statusText('● STOPPET · Motorene er AV')}
@@ -172,9 +174,9 @@ if(espMode){
     if(document.hidden&&running)stopControl();
   });
   window.addEventListener('pagehide',()=>{
-    if(running){running=false;clearInterval(heartbeat);fetch('/api/test/stop',{method:'POST',keepalive:true}).catch(()=>{})}
+    if(running){running=false;clearInterval(heartbeat);resetSettings();fetch('/api/test/stop',{method:'POST',keepalive:true}).catch(()=>{})}
   });
 }
 
-try{let v=JSON.parse(localStorage.getItem('ballkaster-v3'));if(v){$('power').value=$('bpPower').value=v.p;$('spin').value=$('bpSpin').value=v.s;$('angle').value=$('bpAngle').value=v.a}}catch{}update();
+try{let v=JSON.parse(localStorage.getItem('ballkaster-v3'));if(v&&Number.isFinite(+v.a))$('angle').value=$('bpAngle').value=v.a}catch{}resetSettings();
 </script></body></html>
