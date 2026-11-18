@@ -47,28 +47,34 @@ body{min-height:100vh;background:linear-gradient(90deg,rgba(2,13,19,.75),rgba(2,
 .panel,.control,.motor,.plot{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 @media(max-width:800px){body{background-attachment:scroll;background-position:center top}}
 
-/* Stadium control deck: angular industrial buttons with layered neon frames */
+/* Clean illuminated controls: no clipping, overlapping corners or broken frames */
 .tab,.preset,.action,#openBall{
-  border-radius:0;
-  clip-path:polygon(13px 0,calc(100% - 13px) 0,100% 13px,100% calc(100% - 13px),calc(100% - 13px) 100%,13px 100%,0 calc(100% - 13px),0 13px);
-  border:1px solid #81b5a9;
-  box-shadow:inset 0 0 0 2px #061a20,inset 0 0 0 4px #689b88,0 0 12px #a8ff1720;
-  letter-spacing:.35px;
+  clip-path:none;
+  border-radius:12px;
+  border:1px solid #6c9a99;
+  background:linear-gradient(180deg,#17323c,#071820);
+  box-shadow:inset 0 1px 0 #b6dfd755,inset 0 -2px 0 #0009,0 3px 10px #0005;
+  letter-spacing:.15px;
 }
 .tab:before,.preset:before,.action:before,#openBall:before{
-  inset:5px;border-radius:0;clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);
-  border:1px solid #bfff3e88;
+  inset:3px;
+  border-radius:8px;
+  clip-path:none;
+  border:1px solid #baff1640;
 }
 .tab.active,.preset.active,.action.start{
-  border:1px solid #efff9b;
-  box-shadow:inset 0 0 0 2px #315a0b,inset 0 0 0 4px #e6ff8c,0 0 16px #baff1666;
+  border-color:#d8ff70;
+  background:linear-gradient(180deg,#e5ff68,#b7f910 48%,#8bcd00);
+  color:#09200c;
+  box-shadow:inset 0 2px 0 #fff8,inset 0 -3px 0 #5a9700,0 0 15px #baff1655;
 }
-.action.stop:not(:disabled){border-color:#ff9caa;box-shadow:inset 0 0 0 2px #451722,inset 0 0 0 4px #ff6e83,0 0 16px #ff4d5555}
-.action.stop:disabled{box-shadow:inset 0 0 0 2px #1e1119,inset 0 0 0 4px #6d424c}
-.preset{font-size:14px;min-height:58px}
-.tab{min-height:55px}
-.action{min-height:72px}
-@media(max-width:530px){.preset{font-size:12px;min-height:52px}.action{min-height:62px}.tab{min-height:49px}}
+.tab.active:before,.preset.active:before,.action.start:before{border-color:#407b2366}
+.action.stop:not(:disabled){border-color:#ff8993;background:linear-gradient(180deg,#ff6970,#d92e47)}
+.action.stop:disabled{background:linear-gradient(180deg,#41242d,#291821);border-color:#77535b}
+.preset{min-height:51px;font-size:14px}
+.tab{min-height:50px}
+.action{min-height:66px}
+@media(max-width:530px){.preset{min-height:46px;font-size:12px}.tab{min-height:47px}.action{min-height:59px}}
 </style></head><body><div class="app"><header class="top"><div class="logo">BALLKASTER <span>//</span></div><div class="tag">KONTROLL · DEMO</div></header><nav class="tabs"><button class="tab active" id="controlTab">⚡ KONTROLL</button><button class="tab" id="ballTab">⚽ BALLBANE</button></nav><div id="controlPage" class="controlpage"><div class="layout"><section class="scene" aria-label="Illustrasjon av ballkaster på stadion"><div class="machine"><img src="Futuristisk%20ballkaster%20med%20neonbelysning.png" alt="Ballkaster med aluminiumsramme, to hjul og neonbelysning" loading="eager"></div><div class="sceneLabel">BALLKASTER // STADIUM</div></section><section class="controls"><div class="panel"><div class="boxTitle">⚡ MOTORSTYRING</div><div class="control"><div class="heading"><label for="power">⚡ SKUDDSTYRKE</label><strong id="powerVal">70 %</strong></div><input type="range" id="power" min="0" max="100" value="70"><div class="ends"><span>0 %</span><span>100 %</span></div></div><div class="control" style="margin-top:10px"><div class="heading"><label for="spin">↪ SPINN (SKRU)</label><strong id="spinVal">Rett</strong></div><input type="range" id="spin" min="-100" max="100" value="0"><div class="ends"><span>← Venstre</span><span>Rett</span><span>Høyre →</span></div></div><div class="control" style="margin-top:10px"><div class="heading"><label for="angle">◢ HJULSTILLING</label><strong id="angleVal">18°</strong></div><input type="range" id="angle" min="0" max="90" value="18"><div class="ends"><span>0° horisontal</span><span>90° vertikal</span></div></div></div><div class="motors"><div class="motor"><small>◉ VENSTRE MOTOR</small><b id="leftVal">70 %</b></div><div class="motor"><small>◉ HØYRE MOTOR</small><b id="rightVal">70 %</b></div></div><div class="panel"><div class="boxTitle">★ HURTIGVALG</div><div class="presets"><button class="preset" data-preset="pass">⚽ Pasning</button><button class="preset" data-preset="shot">💨 Skudd</button><button class="preset" data-preset="cross">↗ Innlegg</button></div></div><div class="actions"><button id="start" class="action start">▶ START</button><button id="stop" class="action stop" disabled>■ STOPP</button></div><div class="status" id="status"><b>● KLAR</b> · Demo – ingen motorstyring</div></section></div><div class="bottom"><div class="panel"><div class="boxTitle">⚽ BALLBANE · ILLUSTRASJON</div><div class="preview"><svg viewBox="0 0 480 160"><path d="M20 138H460" stroke="#83a398" stroke-width="2"/><path id="miniPath" d="M25 135Q240 0 450 135" stroke="#baff16" stroke-width="4" stroke-dasharray="10 8" fill="none"/><circle cx="25" cy="135" r="8" fill="#e7f4f1"/><rect x="438" y="92" width="22" height="46" stroke="#e8fff1" fill="none"/></svg></div><p class="note">Viser bare en skjematisk bane. Ingen fysisk beregnet høyde eller lengde.</p></div><div class="panel"><div class="boxTitle">◈ SYSTEM</div><p>Motorer beregnes automatisk fra styrke og spinn.</p><p class="note">Spinnverdien fordeler hastigheten mellom motorene uten å overskride 0–100 %. Retningen må kontrolleres på den faktiske maskinen.</p><button class="preset" id="openBall" style="width:100%">SE BALLBANE →</button></div></div></div><section id="ballPage" class="ballpage panel"><div class="boxTitle">⚽ BALLBANE · TO PLAN</div><div class="plots"><div class="plot"><h3>OVENFRA · SIDEAVVIK</h3><svg viewBox="0 0 480 280"><rect x="18" y="12" width="444" height="248" rx="10" fill="#102d32" stroke="#4d796d"/><path d="M240 12V260" stroke="#648e81" stroke-dasharray="6 6"/><path id="topPath" d="M240 245Q240 120 240 22" fill="none" stroke="#baff16" stroke-width="5" stroke-linecap="round"/><circle id="topBall" cx="240" cy="22" r="8" fill="#fff"/><text x="27" y="273" fill="#b1d1c0" font-size="11">Skjematisk – ikke målestokk</text></svg></div><div class="plot"><h3>FRA SIDEN · HØYDE</h3><svg viewBox="0 0 480 280"><rect x="18" y="12" width="444" height="248" rx="10" fill="#102d32" stroke="#4d796d"/><path d="M20 241H462" stroke="#84a79a" stroke-width="2"/><path id="sidePath" d="M30 238Q240 80 450 241" fill="none" stroke="#baff16" stroke-width="5" stroke-linecap="round"/><circle cx="30" cy="238" r="8" fill="#fff"/><text x="27" y="273" fill="#b1d1c0" font-size="11">Skjematisk – ikke målestokk</text></svg></div></div><div class="ballsettings"><div class="control"><div class="heading"><label for="bpPower">STYRKE</label><strong id="bpPowerVal">70 %</strong></div><input type="range" id="bpPower" min="0" max="100" value="70"></div><div class="control"><div class="heading"><label for="bpSpin">SPINN</label><strong id="bpSpinVal">Rett</strong></div><input type="range" id="bpSpin" min="-100" max="100" value="0"></div><div class="control"><div class="heading"><label for="bpAngle">VINKEL</label><strong id="bpAngleVal">18°</strong></div><input type="range" id="bpAngle" min="0" max="90" value="18"></div></div><p class="note">Illustrasjonen viser hvordan innstillingene påvirker en tenkt bane. Den forutsier ikke faktisk ballflukt.</p></section><div class="footer">DEMO · Ikke koblet til ESP32 · Fysisk nødstopp og sikkerhetskontroll kreves før virkelig drift</div></div><script>
 const $=id=>document.getElementById(id);let running=false;
 function spinText(s){return s===0?'Rett':Math.abs(s)+' % '+(s<0?'venstre':'høyre')}
