@@ -89,7 +89,7 @@ body{min-height:100vh;background:linear-gradient(90deg,rgba(2,13,19,.75),rgba(2,
 .machine img{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;mix-blend-mode:screen;filter:contrast(1.04) saturate(1.06)}
 @media(max-width:800px){.machine{left:0;right:0;bottom:2%;width:100%;height:96%}.machine img{max-height:none}}
 @media(max-width:530px){.machine{left:0;right:0;bottom:2%;width:100%;height:96%}.machine img{max-height:none}}
-</style></head><body><div class="app"><header class="top"><div class="logo">BALLKASTER <span>//</span></div><div class="tag">KONTROLL · KOMMUNIKASJONSTEST</div></header><nav class="tabs"><button class="tab active" id="controlTab">⚡ KONTROLL</button><button class="tab" id="ballTab">⚽ BALLBANE</button></nav><div id="controlPage" class="controlpage"><div class="layout"><section class="scene" aria-label="Illustrasjon av ballkaster på stadion"><div class="machine"><img src="ballkaster.webp" alt="Neonballkaster med glødende fotball" loading="eager"></div><div class="sceneLabel">BALLKASTER // STADIUM</div></section><section class="controls"><div class="panel"><div class="boxTitle">⚡ MOTORSTYRING</div><div class="control"><div class="heading"><label for="power">⚡ SKUDDSTYRKE</label><strong id="powerVal">70 %</strong></div><input type="range" id="power" min="0" max="100" value="70"><div class="ends"><span>0 %</span><span>100 %</span></div></div><div class="control" style="margin-top:10px"><div class="heading"><label for="spin">↪ SPINN (SKRU)</label><strong id="spinVal">Rett</strong></div><input type="range" id="spin" min="-100" max="100" value="0"><div class="ends"><span>← Venstre</span><span>Rett</span><span>Høyre →</span></div></div><div class="control" style="margin-top:10px"><div class="heading"><label for="angle">◢ KASTEVINKEL</label><strong id="angleVal">18°</strong></div><input type="range" id="angle" min="0" max="90" value="18"><div class="ends"><span>0° horisontal</span><span>90° vertikal</span></div></div></div><div class="motors"><div class="motor"><small>◉ VENSTRE MOTOR</small><b id="leftVal">70 %</b></div><div class="motor"><small>◉ HØYRE MOTOR</small><b id="rightVal">70 %</b></div></div><div class="panel"><div class="boxTitle">★ HURTIGVALG</div><div class="presets"><button class="preset" data-preset="pass">⚽ Pasning</button><button class="preset" data-preset="shot">💨 Skudd</button><button class="preset" data-preset="cross">↗ Innlegg</button></div></div><div class="actions"><button id="start" class="action start">▶ START</button><button id="stop" class="action stop" disabled>■ STOPP</button></div><div class="status" id="status"><b>● KLAR</b> · Demo – ingen motorstyring</div></section></div></div><section id="ballPage" class="ballpage panel"><div class="boxTitle">⚽ BALLBANE · TO PLAN</div><div class="plots">
+</style></head><body><div class="app"><header class="top"><div class="logo">BALLKASTER <span>//</span></div><div class="tag">KONTROLL · MOTORER OG VINKEL</div></header><nav class="tabs"><button class="tab active" id="controlTab">⚡ KONTROLL</button><button class="tab" id="ballTab">⚽ BALLBANE</button></nav><div id="controlPage" class="controlpage"><div class="layout"><section class="scene" aria-label="Illustrasjon av ballkaster på stadion"><div class="machine"><img src="ballkaster.webp" alt="Neonballkaster med glødende fotball" loading="eager"></div><div class="sceneLabel">BALLKASTER // STADIUM</div></section><section class="controls"><div class="panel"><div class="boxTitle">⚡ MOTORSTYRING</div><div class="control"><div class="heading"><label for="power">⚡ SKUDDSTYRKE</label><strong id="powerVal">70 %</strong></div><input type="range" id="power" min="0" max="100" value="70"><div class="ends"><span>0 %</span><span>100 %</span></div></div><div class="control" style="margin-top:10px"><div class="heading"><label for="spin">↪ SPINN (SKRU)</label><strong id="spinVal">Rett</strong></div><input type="range" id="spin" min="-100" max="100" value="0"><div class="ends"><span>← Venstre</span><span>Rett</span><span>Høyre →</span></div></div><div class="control" style="margin-top:10px"><div class="heading"><label for="angle">◢ KASTEVINKEL</label><strong id="angleVal">18°</strong></div><input type="range" id="angle" min="0" max="90" value="18"><div class="ends"><span>0° horisontal</span><span>90° vertikal</span></div></div></div><div class="motors"><div class="motor"><small>◉ VENSTRE MOTOR</small><b id="leftVal">70 %</b></div><div class="motor"><small>◉ HØYRE MOTOR</small><b id="rightVal">70 %</b></div></div><div class="panel"><div class="boxTitle">★ HURTIGVALG</div><div class="presets"><button class="preset" data-preset="pass">⚽ Pasning</button><button class="preset" data-preset="shot">💨 Skudd</button><button class="preset" data-preset="cross">↗ Innlegg</button></div></div><div class="actions"><button id="start" class="action start">▶ START</button><button id="stop" class="action stop" disabled>■ STOPP</button></div><div class="status" id="status"><b>● KLAR</b> · Kastehjul AV · Vinkel tilgjengelig</div></section></div></div><section id="ballPage" class="ballpage panel"><div class="boxTitle">⚽ BALLBANE · TO PLAN</div><div class="plots">
 <div class="plot"><h3>OVENFRA <span>· RETNING OG SKRU</span></h3><svg viewBox="0 0 480 300" role="img" aria-label="Ballbane sett ovenfra">
 <defs><linearGradient id="pitch" x2="0" y2="1"><stop stop-color="#133b35"/><stop offset="1" stop-color="#071f24"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
 <rect x="15" y="12" width="450" height="273" rx="12" fill="url(#pitch)" stroke="#487a71"/>
@@ -111,7 +111,7 @@ body{min-height:100vh;background:linear-gradient(90deg,rgba(2,13,19,.75),rgba(2,
 <circle cx="35" cy="240" r="9" fill="#fff"/><circle id="sideBall" cx="440" cy="240" r="9" fill="#fff" stroke="#c6ff00" stroke-width="3"/>
 <path d="M425 247V196H452V247" stroke="#d6f4ee" stroke-width="2" fill="none"/>
 <text x="27" y="270" fill="#b9d7cf" font-size="11">UTSKYTNING</text><text x="390" y="270" fill="#b9d7cf" font-size="11">MÅL</text>
-</svg></div></div><div class="ballsettings"><div class="control"><div class="heading"><label for="bpPower">STYRKE</label><strong id="bpPowerVal">70 %</strong></div><input type="range" id="bpPower" min="0" max="100" value="70"></div><div class="control"><div class="heading"><label for="bpSpin">SPINN</label><strong id="bpSpinVal">Rett</strong></div><input type="range" id="bpSpin" min="-100" max="100" value="0"></div><div class="control"><div class="heading"><label for="bpAngle">VINKEL</label><strong id="bpAngleVal">18°</strong></div><input type="range" id="bpAngle" min="0" max="90" value="18"></div></div><p class="note">Illustrasjonen viser hvordan innstillingene påvirker en tenkt bane. Den forutsier ikke faktisk ballflukt.</p></section><div class="footer">KOMMUNIKASJONSTEST · Motorene er deaktivert · Fysisk nødstopp og sikkerhetskontroll kreves før virkelig drift</div></div><script>
+</svg></div></div><div class="ballsettings"><div class="control"><div class="heading"><label for="bpPower">STYRKE</label><strong id="bpPowerVal">70 %</strong></div><input type="range" id="bpPower" min="0" max="100" value="70"></div><div class="control"><div class="heading"><label for="bpSpin">SPINN</label><strong id="bpSpinVal">Rett</strong></div><input type="range" id="bpSpin" min="-100" max="100" value="0"></div><div class="control"><div class="heading"><label for="bpAngle">VINKEL</label><strong id="bpAngleVal">18°</strong></div><input type="range" id="bpAngle" min="0" max="90" value="18"></div></div><p class="note">Illustrasjonen viser hvordan innstillingene påvirker en tenkt bane. Den forutsier ikke faktisk ballflukt.</p></section><div class="footer">Vinkel kan justeres uten START · Kontroller mekaniske grenser før montering</div></div><script>
 const $=id=>document.getElementById(id);let running=false;
 function spinText(s){return s===0?'Rett':Math.abs(s)+' % '+(s<0?'venstre':'høyre')}
 function update(from){if(from){let suffix=from.startsWith('bp')?from.slice(2):from;let other=from.startsWith('bp')?suffix.charAt(0).toLowerCase()+suffix.slice(1):'bp'+suffix.charAt(0).toUpperCase()+suffix.slice(1);$(other).value=$(from).value}let p=+$('power').value,s=+$('spin').value,a=+$('angle').value;let d=Math.min(p,100-p)*Math.abs(s)/100;let l=Math.round(p+(s>=0?d:-d)),r=Math.round(p+(s>=0?-d:d));$('powerVal').textContent=$('bpPowerVal').textContent=p+' %';$('spinVal').textContent=$('bpSpinVal').textContent=spinText(s);$('angleVal').textContent=$('bpAngleVal').textContent=a+'°';$('leftVal').textContent=l+' %';$('rightVal').textContent=r+' %';for(let id of ['power','spin','angle','bpPower','bpSpin','bpAngle']){let e=$(id);e.style.setProperty('--fill',100*(+e.value-(+e.min))/(+e.max-(+e.min))+'%')}let drift=s*.95*Math.min(1,p/35),end=Math.max(38,Math.min(442,240+drift));let topD=`M240 250 Q${240+drift*.35} 133 ${end} 40`;$('topPath').setAttribute('d',topD);$('topPathGlow').setAttribute('d',topD);$('topBall').setAttribute('cx',end);let height=Math.min(160,20+a*.95+p*.42);let reach=35+Math.max(0,p)*4.05;let sideD=`M35 240 Q${(35+reach)/2} ${240-height*2} ${reach} 240`;$('sidePath').setAttribute('d',sideD);$('sidePathGlow').setAttribute('d',sideD);$('sideBall').setAttribute('cx',reach);try{localStorage.setItem('ballkaster-v3',JSON.stringify({p,s,a}))}catch{}}
@@ -119,9 +119,9 @@ for(let id of ['power','spin','angle','bpPower','bpSpin','bpAngle'])$(id).addEve
 function page(which){$('controlPage').classList.toggle('hidden',which==='ball');$('ballPage').classList.toggle('active',which==='ball');$('controlTab').classList.toggle('active',which==='control');$('ballTab').classList.toggle('active',which==='ball')}
 $('controlTab').onclick=()=>page('control');$('ballTab').onclick=()=>page('ball');
 const presets={pass:[40,0,10],shot:[85,0,16],cross:[65,35,38]};document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>{let [p,s,a]=presets[b.dataset.preset];$('power').value=p;$('spin').value=s;$('angle').value=a;$('bpPower').value=p;$('bpSpin').value=s;$('bpAngle').value=a;update();document.querySelectorAll('[data-preset]').forEach(x=>x.classList.toggle('active',x===b))});
-// ESP32 kommunikasjonstest. Ingen motorutganger aktiveres av denne firmwaren.
+// ESP32 fysisk motorstyring og uavhengig vinkelstyring.
 const espMode=location.hostname==='192.168.4.1';
-let heartbeat=null, sending=false;
+let heartbeat=null, sending=false, angleSending=false;
 function statusText(message){$('status').textContent=message}
 function buttons(){ $('start').disabled=running; $('stop').disabled=!running; }
 async function api(path,params){
@@ -132,6 +132,13 @@ async function api(path,params){
 }
 function resetSettings(){for(const id of ['power','bpPower'])$(id).value=20;for(const id of ['spin','bpSpin'])$(id).value=0;update();}
 function settings(){return {power:$('power').value,spin:$('spin').value,angle:$('angle').value}}
+async function angleTick(){
+  if(!espMode||running||angleSending)return;
+  angleSending=true;
+  try{await api('/api/angle',{angle:$('angle').value})}
+  catch(e){statusText('● VINKELSTYRING · Ingen kontakt med ESP32 ('+e.message+')')}
+  finally{angleSending=false}
+}
 async function heartbeatTick(){
   if(!running||sending)return;
   sending=true;
@@ -152,7 +159,7 @@ async function startControl(){
   try{
     await api('/api/test/start');
     running=true;buttons();
-    statusText('● KOMMUNIKASJONSTEST AKTIV · Motorene er AV');
+    statusText('● AKTIV · Kastehjulene styres fra appen');
     await heartbeatTick();
     if(running)heartbeat=setInterval(heartbeatTick,400);
   }catch(e){running=false;resetSettings();buttons();statusText('● STOPPET · Kunne ikke starte test ('+e.message+')')}
@@ -160,14 +167,15 @@ async function startControl(){
 async function stopControl(){
   running=false;clearInterval(heartbeat);heartbeat=null;resetSettings();buttons();
   if(!espMode){statusText('● KLAR · Demo – ingen motorstyring');return}
-  statusText('● Stopper test …');
-  try{await api('/api/test/stop');statusText('● STOPPET · Motorene er AV')}
+  statusText('● Stopper kastehjul …');
+  try{await api('/api/test/stop');statusText('● STOPPET · Kastehjul AV · Vinkel kan justeres')}
   catch(e){statusText('● FORBINDELSESFEIL · Testen tidsavbrytes automatisk på ESP32')}
 }
 $('start').onclick=startControl;
 $('stop').onclick=stopControl;
 if(espMode){
-  statusText('● KLAR · Motorene er AV · Kommunikasjonstest');
+  statusText('● KLAR · Kastehjul AV · Vinkel kan justeres');
+  setInterval(angleTick,400);
   // Ved ny sideinnlasting sendes STOPP. Aldri automatisk START.
   api('/api/test/stop').catch(()=>statusText('● Ingen kontakt med ESP32'));
   document.addEventListener('visibilitychange',()=>{
